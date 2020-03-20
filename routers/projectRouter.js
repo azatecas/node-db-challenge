@@ -61,11 +61,26 @@ router.get("/:id/tasks", (req, res) => {
         })
         .catch(() => {
             res.status(500).json({ errorMessage: "error fetching tasks by id 😢😢😢"})
-        })
-
-        
-
-        
+        })       
 })
+
+router.post('/:id/tasks', (req, res) => {
+    const { id } = req.params;
+    if (req.body.description){
+        Project
+            .addTasksToProject(req.body, id)
+            .then(()=> {
+                res.status(201).json({message: 'Posted new tasks'})
+            })
+            .catch((err) => {
+                res.status(500).json({ errorMessage: 'an error happened', error:err})
+            })
+    } else {
+        res.status(400).json({ errorMessage: " missing description field"})
+    }        
+
+})
+
+
 
 module.exports = router;

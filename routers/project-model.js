@@ -5,6 +5,7 @@ module.exports = {
     find,
     findById,
     findTasks,
+    addTasksToProject
     
 };
 
@@ -23,6 +24,8 @@ function findById(id) {
         .first();
 };
 
+
+
 function findTasks(id) {
     return db("projects")
         .where({ id })
@@ -40,4 +43,21 @@ function findTasks(id) {
                     .where("tasks.project_id", id)
             }
         });
+}
+
+
+
+function addTasksToProject(task, id) {
+    return db("projects")
+    .where({ id })
+    .first()
+    .then(item => {
+      return db("tasks")
+        .insert(task, "id")
+        .then(added => {
+          return db("tasks")
+            .where({ id: added[0] })
+            .first();
+        });
+    });
 }
