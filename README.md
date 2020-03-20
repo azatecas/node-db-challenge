@@ -8,8 +8,8 @@ In this challenge, you design and build a Data Model and a RESTful API that stor
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
-This is an individual assessment, please work on it alone. It is an opportunity to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
+This is an individual assessment, please work on it alone. It is an opportunity to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
 
 If the instructions are not clear, please seek support from your TL and Instructor on Slack.
