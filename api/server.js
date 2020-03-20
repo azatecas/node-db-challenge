@@ -6,7 +6,8 @@ const helmet = require('helmet');
 const CORS = require('cors');
 
 //bring endpoints
-
+const resRouter = require('../routers/resourcesRouter.js');
+const projectRouter = require('../routers/projectRouter.js');
 
 //declare your server
 const server = express();
@@ -17,9 +18,12 @@ server.use(helmet());
 server.use(CORS());
 server.use(express.json());
 
-//endpoint
-// server.use('/api/characters', characterRouter);
 
+//endpoint
+server.use('/api/projects', projectRouter);
+server.use('/api/resources', resRouter);
+
+//base endpoint to check if running
 server.get('/', (req, res) => {
     res.send('<h1>Server 🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️</h1>')
 })
