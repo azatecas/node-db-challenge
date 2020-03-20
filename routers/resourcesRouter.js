@@ -15,4 +15,17 @@ router.get('/', (req, res) => {
         })
 })
 
+router.post('/', (req, res) => {
+    const newResource = req.body;
+    Resource
+        .add(newResource)
+        .then(item => {
+            res.status(201).json({ message: 'Posted new resource', postedResource: item})
+        })
+        .catch(() => {
+            res.status(500).json({ errorMessage: "error posting new resource😢😢😢"})
+        })
+
+})
+
 module.exports = router;
