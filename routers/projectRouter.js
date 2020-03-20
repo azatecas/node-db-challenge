@@ -15,4 +15,17 @@ router.get('/', (req, res) => {
         })
 })
 
+router.get('/:id', (req, res) => {
+    const { id } = req.params
+    Project
+        .findById(id)
+        .then(item => {
+            res.status(200).json(item)
+        })
+        .catch(() => {
+            res.status(500).json({ errorMessage: "error fetching by id"})
+        })
+
+})
+
 module.exports = router;
