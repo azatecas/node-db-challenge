@@ -32,7 +32,7 @@ function findTasks(id) {
         .then(item => {
             if(item.length !== 0){
                 return db("tasks")
-                    .join("projects", "tasks.project_id", "projects.id")
+                    .join("projects", "projects.id", "tasks.project_id")
                     .select(
                         "projects.name",
                         "projects.description",

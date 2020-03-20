@@ -8,6 +8,7 @@ const CORS = require('cors');
 //bring endpoints
 const resRouter = require('../routers/resourcesRouter.js');
 const projectRouter = require('../routers/projectRouter.js');
+const taskRouter = require('../routers/taskRouter.js');
 
 //declare your server
 const server = express();
@@ -22,6 +23,7 @@ server.use(express.json());
 //endpoint
 server.use('/api/projects', projectRouter);
 server.use('/api/resources', resRouter);
+server.use('/api/tasks', taskRouter);
 
 //base endpoint to check if running
 server.get('/', (req, res) => {
