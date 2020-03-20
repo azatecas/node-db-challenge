@@ -61,8 +61,8 @@ exports.up = function(knex) {
               .onUpdate("CASCADE");
           })
       );
-    };
 };
+
 
 exports.down = function(knex) {
     return knex.schema
