@@ -8,7 +8,9 @@ In this challenge, you design and build a Data Model and a RESTful API that stor
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
+
 This is an individual assessment, please work on it alone. It is an opportunity to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
+
 
 If the instructions are not clear, please seek support from your TL and Instructor on Slack.
 
@@ -40,11 +42,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+        relational databases is where we store our data, SQL is the language we use to communicate witht the database to manipulate the data
+
 - [ ] Why do tables need a `primary key`?
+
+        every entry on the database needs to be identified and a primary key is unique that that entry
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+        foreign key
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+        Bridge tables
 
 ## Minimum Viable Product
 
@@ -136,6 +146,7 @@ Add an endpoint for retrieving a `project` by its `id` that returns an object wi
 ```
 
 Add the remaining CRUD operations for projects and tasks.
+
 
 Use `knex` to add _data seeding_ scripts for projects and tasks.
 
